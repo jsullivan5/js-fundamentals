@@ -21,7 +21,17 @@ exports.stringsAnswers = {
   },
 
   wordWrap: function(str, cols) {
+    var newStr = '';
 
+    for (var i = 0; i < str.length; i++) {
+      var twoAhead = str[i + 2];
+      if (str[i] === ' ' && twoAhead !== ' ') {
+        newStr += '\n';
+      } else {
+        newStr += str[i];
+      }
+    }
+    return newStr;
   },
 
   reverseString: function(str) {
