@@ -86,7 +86,24 @@ exports.arraysAnswers = {
   },
 
   duplicates: function(arr) {
+    var contained = {};
+    var duplicates = [];
 
+    for (var i = 0; i < arr.length; i++) {
+      if (contained[arr[i]]) {
+        contained[arr[i]]++;
+      } else {
+        contained[arr[i]] = 1;
+      }
+    }
+
+    for (var j = 0; j < arr.length; j++) {
+      if (contained[arr[j]] > 1 && !duplicates.includes(arr[j])) {
+        duplicates.push(arr[j]);
+      }
+    }
+
+    return duplicates;
   },
 
   square: function(arr) {
