@@ -116,6 +116,12 @@ exports.arraysAnswers = {
   },
 
   findAllOccurrences: function(arr, target) {
-
+    var occurences = [];
+    for (var i = 0; i < arr.length; i++) {
+      if (arr[i] === target) {
+        occurences.push(i);
+      }
+    }
+    return occurences;
   }
 };
