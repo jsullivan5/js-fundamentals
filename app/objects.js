@@ -12,6 +12,9 @@ exports.objectsAnswers = {
   },
 
   iterate: function(obj) {
-
+    var keys = Object.keys(obj);
+    return keys.map(function(key) {
+      return key + ': ' + obj[key];
+    });
   }
 };
